@@ -13,6 +13,23 @@ func main() {
 	orgName := os.Getenv("GOOD_MORNING_GITHUB_ORG_NAME")
 	teamSlug := os.Getenv("GOOD_MORNING_GITHUB_TEAM_SLUG")
 	accessToken := os.Getenv("GOOD_MORNING_GITHUB_ACCESS_TOKEN")
+	configured := true
+	if orgName == "" {
+		fmt.Println("Env GOOD_MORNING_GITHUB_ORG_NAME is blank. You have to specify it.")
+		configured = false
+	}
+	if teamSlug == "" {
+		fmt.Println("Env GOOD_MORNING_GITHUB_TEAM_SLUG is blank. You have to specify it.")
+		configured = false
+	}
+	if accessToken == "" {
+		fmt.Println("Env GOOD_MORNING_GITHUB_ACCESS_TOKEN is blank. You have to specify it.")
+		configured = false
+	}
+	if !configured {
+		os.Exit(1)
+	}
+
 	client := createGithubClient(accessToken)
 	team := findTeam(client, teamSlug, orgName)
 	createDiscusstionIfPossible(client, *team.ID)
