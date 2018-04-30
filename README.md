@@ -3,7 +3,9 @@
 
 
 ## Install
+```
 brew install ngtk/tools/good-morning
+```
 
 ## Usage
 You have to specify configs as env.
