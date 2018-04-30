@@ -1,0 +1,7 @@
+[[constraint]]
+  name = "github.com/google/go-github"
+  revision = "29336dbceeab3a9b7e075b90d8b6d991d1bb5da2" # You should specify the version when the next of v15.0.0 is released
+
+[prune]
+  go-tests = true
+  unused-packages = true
