@@ -5,6 +5,7 @@
 		"publish-github"
 	],
 	"Os": "linux darwin windows",
+	"PackageVersion": "1.0.0",
 	"TaskSettings": {
 		"publish-github": {
 			"owner": "ngtk",
